@@ -2,7 +2,7 @@ const Discord = require('Discord.js');
 const TOKEN = "censored";
 const PREFIX = "!"
 var bot = new Discord.Client();
-cbot.on('ready',() => {
+bot.on('ready',() => {
 	console.log('Ready');
 });
 client.on('message', message => {
