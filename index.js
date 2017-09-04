@@ -1,6 +1,6 @@
 const Discord = requirediscord.js');
 
-const TOKEN = "MzUzOTgxMjA2NjM2Nzg5NzYw.DI5BzQ.e70YgX4nHc3qzrXZUQLtPp2X35w";
+const TOKEN = "censored";
 const PREFIX = "!"
 
 var bot = new Discord.Client();
