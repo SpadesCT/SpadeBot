@@ -1,26 +1,16 @@
-const Discord = requirediscord.js');
-
+const Discord = require('Discord.js');
 const TOKEN = "censored";
 const PREFIX = "!"
-
 var bot = new Discord.Client();
-
-bot.on("ready", function() {
-	console.log("Ready");
+cbot.on('ready',() => {
+	console.log('Ready');
 });
+client.on('message', message => {
+if(message.author.bot) return;
 
-bot.on("message", function(message) {
-	if message.author.equals(bot.user)) return;
-	
-	if (!message.content.startswith(PREFIX) return;
-	
-	var args = message.content.substring(PREFIX.length).split("");
-	
-	switch (args[0]) {
-		case "ping"
-			message.channel.sendMessage("Pong!");
-			break;
-	}
+if (message.content.startsWith(prefix + 'ping')) {
+  message.reply("Pong!");
+};
+
 });
-
 bot.login(TOKEN);
