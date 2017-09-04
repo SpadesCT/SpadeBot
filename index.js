@@ -5,7 +5,7 @@ var bot = new Discord.Client();
 bot.on('ready',() => {
 	console.log('Ready');
 });
-client.on('message', message => {
+bot.on('message', message => {
 if(message.author.bot) return;
 
 if (message.content.startsWith(prefix + 'ping')) {
