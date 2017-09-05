@@ -1,5 +1,4 @@
 const Discord = require('Discord.js');
-const TOKEN = "censored";
 const prefix = "!"
 var bot = new Discord.Client();
 bot.on('ready',() => {
