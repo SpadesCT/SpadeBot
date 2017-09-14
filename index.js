@@ -1,5 +1,4 @@
 const Discord = require('Discord.js');
-const TOKEN = "TOKEN";
 const prefix = "/"
 var bot = new Discord.Client()
 
