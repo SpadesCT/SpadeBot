@@ -29,7 +29,7 @@ if (message.content.startsWith(prefix + 'userinfo')) {
 	.addField("Joined Guild", `${guild.joinedAt}`)
 	.addField("Joined Discord", `${user.createdAt}`)
 	.addField("isBot", `${user.bot}`)
-	.setFooter('© 2017 (Created by SpadesCT#2312)');
+	.setFooter('© SpadeBot | UserInfo');
 	
 
 	message.channel.sendEmbed(embed);
@@ -51,16 +51,22 @@ if (message.content.startsWith(prefix + 'serverinfo')) {
 	.addField(`Members: (${guild.memberCount})`, `${guild.members.filter(m => m.user.presence.status === "online").size} online`)
 	.addField("Members Offline: ", `${guild.members.filter(m => m.user.presence.status === "offline").size}`)
 	.setThumbnail(guild.iconURL);
+	.setFooter('© SpadeBot | ServerInfo');
 
 	message.channel.sendEmbed(embed);
 };
 
 if (message.content.startsWith(prefix + 'info')) {
 	let embed = new Discord.RichEmbed()
+	const duration =  moment.duration(this.client.uptime).format(" D [days], H [hrs], m [mins], s [secs]");
 
-	.setTitle(`${bot.user}`)
-	.addField("Bot Uptime", bot.uptime)
-	.setFooter("© SpadeBot | Info", bot.user.avatarURL);
+	.addField("Memory Usage", ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB)
+	.addField("Uptime", ${duration})
+	.addField("Users", {this.client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString()}
+	.addField("Servers", ${this.client.guilds.size.toLocaleString()}
+	.addField("Channels", ${this.client.channels.size.toLocaleString()}
+	.addField("Discord.js", ${Discord.version}`)
+	.setFooter('© SpadeBot | ServerInfo');
 
 	message.channel.sendEmbed(embed);
 
