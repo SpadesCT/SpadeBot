@@ -207,4 +207,4 @@ if (message.content.startsWith(prefix + 'say')) {
 if(message.content.toLowerCase().includes('poop'))
 	message.react('💩');
 });
-bot.login(TOKEN);
+bot.login(process.env.BOT_TOKEN);
